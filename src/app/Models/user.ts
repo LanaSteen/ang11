@@ -1,4 +1,4 @@
-export interface User {
+export interface IUser {
     id: number;
     email: string;
     first_name: string;
@@ -6,3 +6,11 @@ export interface User {
     avatar: string;
   }
  
+
+  export class User{
+    id?: number;
+    email!: string;
+    first_name!: string;
+    last_name!: string;
+    avatar!: string;
+  }
