@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class DetailsComponent {
      constructor(private route : ActivatedRoute){
            this.route.params.subscribe(data => console.log(data["id"]))
-           this.route.params.subscribe(data => console.log(data["name"]))
+          //  this.route.params.subscribe(data => console.log(data["name"]))
            
 
      }
