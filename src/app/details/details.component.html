@@ -1,1 +1,13 @@
 <p>details works!</p>
+
+
+
+<div class="card" style="width: 18rem;">
+    <img [src]="singleUser.avatar" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{singleUser.first_name}}</h5>
+      <p class="card-text">{{singleUser.last_name}}</p>
+      <!-- <button (click)="goToDetails(id)">See More</button> -->
+      <a routerLink="/home"  class="btn btn-primary">Go Back</a>
+    </div>
+  </div>

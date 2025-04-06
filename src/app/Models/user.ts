@@ -14,3 +14,9 @@ export interface IUser {
     last_name!: string;
     avatar!: string;
   }
+
+
+  export class regUser{
+    email!: string;
+    password!: string;
+  }
