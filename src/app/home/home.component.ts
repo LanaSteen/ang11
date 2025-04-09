@@ -26,11 +26,16 @@ export class HomeComponent {
     users$ ? : Observable<any>
 
     ngOnInit(){
+      
          this.users$ = this.api.getUsers()
-         this.users$.subscribe(resp => {
-          this.users = resp.data;
-          console.log(resp.data)
-         })
+         if( this.users$ ){
+          console.log(this.users$)
+          this.users$.subscribe(resp => {
+            resp.data?  this.users = resp.data : this.users =[];
+            // console.log(resp.data)
+           })
+         }
+   
       
     }
 
