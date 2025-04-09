@@ -1,21 +1,22 @@
 <p>register works!</p>
 
 
-<!-- 
-<form #myForm="ngForm" action="" (onSubmit)="register()">
-      <input type="email" 
-         placeholder="email" 
-         [(ngModel)]="email" 
+@defer{
+        <form #myForm="ngForm" action="" (ngSubmit)="register(myForm)">
+              <input type="email" 
+                 placeholder="email" 
+                 [(ngModel)]="email" 
+        
+                 name="email">
+              <input type="password"  
+                 placeholder="password" 
+                 [(ngModel)]="password" 
+                 name="password">
+              <button type="submit">Register</button>
+        </form>
+}
 
-         name="email">
-      <input type="password"  
-         placeholder="password" 
-         [(ngModel)]="password" 
-         name="password">
-      <button type="submit">Register</button>
-</form> -->
-
-<button (click)="register()">register</button>
+<!-- <button (click)="register()">register</button> -->
 
 
 

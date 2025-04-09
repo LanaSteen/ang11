@@ -7,13 +7,52 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
-   {path: "", redirectTo: "home", pathMatch: "full"},
 
-   {path: 'home', component: HomeComponent },
-   {path: 'about', component: AboutComponent },
-   {path: 'details/:id', component: DetailsComponent },
-   {path: 'register', component:RegisterComponent},
-   {path: 'login', component:LoginComponent},
+
+      // eager routing
+   // {path: "", redirectTo: "home", pathMatch: "full"},
+
+   // {path: 'home', component: HomeComponent },
+   // {path: 'about', component: AboutComponent },
+   // {path: 'details/:id', component: DetailsComponent },
+   // {path: 'register', component:RegisterComponent},
+   // {path: 'login', component:LoginComponent},
+   // {path : "**", component : ErrorComponent}
+
+
+
+
+
+
+   // lazy loading routing
+
+   {path: "", redirectTo: "home", pathMatch: "full"},
+   
+   {
+      path: "home",
+      loadComponent: () => import('./home/home.component').then(m => m.HomeComponent)
+   },
+   {
+      path: 'about',
+      loadComponent: () => import('./about/about.component').then(m => m.AboutComponent)
+   },
+   {
+      path: 'details/:id',
+      loadComponent: () => import('./details/details.component').then(m => m.DetailsComponent)
+   },
+   {
+       path: 'register',
+      loadComponent: () => import('./register/register.component').then(m => m.RegisterComponent)},
+   {
+      path: 'login',
+      loadComponent: () => import('./login/login.component').then(m => m.LoginComponent)
+   },
+
+
    {path : "**", component : ErrorComponent}
+
+
+
+
 
 ];

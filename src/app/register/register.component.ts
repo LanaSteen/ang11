@@ -12,18 +12,19 @@ import { UserService } from '../Services/user/user.service';
 export class RegisterComponent {
 
   constructor(private userService : UserService){}
-
-
   email : string = ""
   password : string = ""
 
-  register(){
+  register(form : NgForm){
 
-    // let user = {
-    //   email : this.email,
-    //   password : this.password
-    // }
-    //  if(form.valid){
+    
+     if(form.valid){
+
+         // let user = {
+         //   email : this.email,
+         //   password : this.password
+         // }
+
         let user =  {
           email: "eve.holt@reqres.in",
           password: "pistol"
@@ -32,6 +33,6 @@ export class RegisterComponent {
           console.log(resp)
         })
   
-    //  }
+     }
   }
 }
