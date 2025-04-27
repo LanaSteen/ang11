@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { ErrorHandlerService } from '../Services/error-handler.service';
 
 @Component({
   selector: 'app-error-dialog',
@@ -9,5 +10,22 @@ import { Component } from '@angular/core';
   styleUrl: './error-dialog.component.scss'
 })
 export class ErrorDialogComponent {
-  showDialog = false
+  showDialog = false;
+  rrorMessage = "";
+    constructor(private errorHandler: ErrorHandlerService) {
+        this.errorHandler.dialogSatte.subscribe((data: any) => {
+          this.showDialog = data.show;
+          this.rrorMessage = data.message;
+          document.body.style.overflow = "hidden"
+    });
+
+    } 
+
+
+
+  closeDialog() {
+    // this.showDialog = false;
+    this.errorHandler.hideDialog();
+       document.body.style.overflow = "scroll"
+  }
 }

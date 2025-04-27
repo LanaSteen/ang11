@@ -48,6 +48,10 @@ export const routes: Routes = [
       loadComponent: () => import('./login/login.component').then(m => m.LoginComponent)
    },
 
+   {
+      path: 'main',
+      loadComponent: () => import('./main/main.component').then(m => m.MainComponent)
+   },
 
    {path : "**", component : ErrorComponent}
 

@@ -6,11 +6,12 @@ import { IUser, User } from '../Models/user';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../Services/user/user.service';
 import { Observable } from 'rxjs';
+import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterModule, FormsModule, CommonModule],
+  imports: [RouterModule, FormsModule, CommonModule, ErrorDialogComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
