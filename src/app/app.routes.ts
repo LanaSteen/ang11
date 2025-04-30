@@ -52,6 +52,10 @@ export const routes: Routes = [
       path: 'main',
       loadComponent: () => import('./main/main.component').then(m => m.MainComponent)
    },
+   {
+      path: 'authentification',
+      loadComponent: () => import('./auth/auth.component').then(m => m.AuthComponent)
+   },
 
    {path : "**", component : ErrorComponent}
 

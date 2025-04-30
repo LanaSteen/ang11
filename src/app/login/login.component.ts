@@ -4,6 +4,7 @@ import { UserService } from '../Services/user/user.service';
 import { LocalizedString } from '@angular/compiler';
 import { LocaltorageService } from '../Services/localtorage.service';
 import { Router, RouterModule } from '@angular/router';
+import { SignalService } from '../Services/signal.service';
 
 @Component({
   selector: 'app-login',
@@ -15,12 +16,15 @@ import { Router, RouterModule } from '@angular/router';
 export class LoginComponent {
  constructor(private userService : UserService,
              private localStorage : LocaltorageService,
-             private router : Router
+             private router : Router,
+             private sig : SignalService
  ){}
 
 
   email : string = ""
   password : string = ""
+
+  userName =''
 
   register(form : NgForm){
 
@@ -44,5 +48,14 @@ export class LoginComponent {
         })
   
      }
+  }
+
+
+  
+
+
+
+  logIn(){
+    this.sig.setUserName(this.userName)
   }
 }
