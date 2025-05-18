@@ -3,6 +3,12 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { UserService } from '../Services/user/user.service';
 import { User } from '../Models/user';
 
+
+// AngularJS 
+// Angular2 - 19
+
+
+
 @Component({
   selector: 'app-details',
   standalone: true,
@@ -11,6 +17,10 @@ import { User } from '../Models/user';
   styleUrl: './details.component.scss'
 })
 export class DetailsComponent {
+   
+
+     rame? : string | number
+
      constructor(private route : ActivatedRoute, private userService : UserService){
      
            this.route.params.subscribe(data => {
