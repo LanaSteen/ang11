@@ -7,6 +7,10 @@
         <li><a routerLink="/login" [routerLinkActive]="activeRouteClass">{{user !="" ? "Log Out": "Log In"}}</a></li>
         <li><a routerLink="/authentification" [routerLinkActive]="activeRouteClass">Auth</a></li>
 
+        <li><a routerLink="/registerNewUser" [routerLinkActive]="activeRouteClass" *ngIf="!isAuthNew">Register New</a></li>
+        <li><a routerLink="/logInNewUser" [routerLinkActive]="activeRouteClass" *ngIf="!isAuthNew">Log In New</a></li>
+        <li><a *ngIf="isAuthNew" (click)="logOut()">Log Out</a></li>
+
 
         <li>User: {{user}}</li>
         

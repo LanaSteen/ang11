@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { ErrorDialogComponent } from "../error-dialog/error-dialog.component";
 import { SignalService } from '../Services/signal.service';
 import { FormsModule } from '@angular/forms';
+import { UserType, WebUser } from '../Models/user';
+import { AuthService } from '../Services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -11,8 +14,13 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './main.component.scss'
 })
 export class MainComponent {
-  constructor(private sig : SignalService){
+  constructor(private sig : SignalService, private auth: AuthService, private route : Router){
 
+  }
+  ngOnInit(){
+      if(!this.auth.isLogedIn()){
+              this.route.navigateByUrl("/logInNewUser")
+      }
   }
 
   amount? : number
@@ -22,4 +30,12 @@ export class MainComponent {
       this.sig.setDataAmount(this.amount)
     }
   }
+
+
+  user : WebUser = new WebUser
+
+  logIn(){
+    this.user.userType = UserType.Admin
+  }
+
 }

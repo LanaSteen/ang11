@@ -20,3 +20,23 @@ export interface IUser {
     email!: string;
     password!: string;
   }
+
+
+  export class WebUser {
+    email! : string ;
+    password! : string;
+    userType : UserType = UserType.Guest
+
+  }
+
+  export interface rameUser {
+    email : string
+    password : string
+    userType : UserType 
+  }
+
+  export enum UserType {
+     Admin = "Admin",
+     Guest = "Guest",
+     Employee = "Employee"
+  }

@@ -57,6 +57,16 @@ export const routes: Routes = [
       loadComponent: () => import('./auth/auth.component').then(m => m.AuthComponent)
    },
 
+     {
+      path: 'registerNewUser',
+      loadComponent: () => import('./regitser-new/regitser-new.component').then(m => m.RegitserNewComponent)
+   },
+   
+     {
+      path: 'logInNewUser',
+      loadComponent: () => import('./login-new/login-new.component').then(m => m.LoginNewComponent)
+   },
+
    {path : "**", component : ErrorComponent}
 
 
